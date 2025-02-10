@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 
-class ActivityDefinitionPage {
+class RCAModelDefinitionPage {
     constructor(page) {
         
         this.page = page;
@@ -30,26 +30,26 @@ class ActivityDefinitionPage {
         this.endNodePoint = this.page.locator('div.react-flow__node-END_EVENT div.react-flow__handle-left');
         this.blockNodeEndPoint = (startNode) => this.page.locator(`div.react-flow__node-${startNode} div.react-flow__handle-left`);
 
-        this.saveActivityBtn = this.page.locator('button#saveactivity');
+        this.saveRCAModelBtn = this.page.locator('button#saveactivity');
 
         this.tableData = this.page.locator('.cds--data-table-content');
         this.searchBtn = this.page.locator('div.headers div.cds--search-magnifier');
         this.searchInputBox = this.page.locator('input.cds--search-input');
     }
 
-    // Activity Define Form
-    async fillActivityDefination() {
+    // RCA Model Define Form
+    async fillRCAModelDefination() {
         const formField = await this.propertyBlock.locator('div.form-field');
 
         const fieldOne = formField.first();
         const inputfield = await fieldOne.locator("input#name").first();
         await expect(inputfield).toBeVisible();
-        await inputfield.fill('Demo-Activity');
+        await inputfield.fill('Demo-RCAModel');
 
         const fieldSecond = formField.nth(1);
         const descriptionField = await fieldSecond.locator("textarea#description").first();
         await expect(descriptionField).toBeVisible();
-        await descriptionField.fill('Demo-Activity Description');
+        await descriptionField.fill('Demo-RCA Model Description');
 
         await this.blockPropSaveButton.first().click();
 
@@ -134,8 +134,8 @@ class ActivityDefinitionPage {
         await this.page.mouse.up();
     }
 
-    async saveActivity() {
-        const activitySaveBtn = await this.saveActivityBtn;
+    async saveRCAModel() {
+        const activitySaveBtn = await this.saveRCAModelBtn;
         await expect(activitySaveBtn).toBeVisible();
         await activitySaveBtn.click();
     }
@@ -143,13 +143,13 @@ class ActivityDefinitionPage {
     async activityVerify() {
         await this.page.waitForTimeout(5);
         await this.searchBtn.click();
-        await this.searchInputBox.fill('Demo-Activity');
+        await this.searchInputBox.fill('Demo-RCAModel');
         const row = await this.tableData.locator('tr');
         const name = await row.nth(1).locator('td').nth(0).locator('span.information-text').innerText();
-        await expect(name).toContain('Demo-Activity');
+        await expect(name).toContain('Demo-RCAModel');
     }
 
-    async verifyActivityName(activityName) {
+    async verifyRCAModelName(activityName) {
         const header = await this.page.locator(".header-title");
         const headertext= await header.innerText();
         expect(headertext).toBe(activityName);
@@ -157,4 +157,4 @@ class ActivityDefinitionPage {
 }
 
 
-module.exports = { ActivityDefinitionPage };
+module.exports = { RCAModelDefinitionPage };

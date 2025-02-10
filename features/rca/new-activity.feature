@@ -1,14 +1,14 @@
-Feature: Activity Definition Create - Update
+Feature: RCA Model Definition Create - Update
 
   Background:
-    Given I'm logged into the PEM2.0 Applcaition with user "Automation1"
+    Given I'm logged into the CC2.0 Applcaition with user "Automation1"
     When User navigates to "Definitions" under "Activities" [App-Nav]
 
   #  @current
-  Scenario: Verify that user is able to create new activity
+  Scenario: Verify that user is able to create new RCAModel
     When User clicks on "New" link in [Page]["activities-list"]
-    Then User verifies "Workflow" is displayed as current breadscrumb on [Page]["new-activity"]
-    Given User fill the definition details for new activity
+    Then User verifies "Workflow" is displayed as current breadscrumb on [Page]["new-RCAModel"]
+    Given User fill the definition details for new RCAModel
 
     # For Partner Task
     Given User drags "PARTNER_TASK" block and fills details on definition tab
@@ -41,8 +41,8 @@ Feature: Activity Definition Create - Update
     # Given User fill the exit validation for "SYSTEM"
     # Given User connects start node to "SYSTEM" node and "SYSTEM" node to end node
 
-    # Activity save and list page
-    Given User save the new activity
-    Then User verifies activity list page after save completion
+    # RCA Model save and list page
+    Given User save the new RCAModel
+    Then User verifies RCAModel list page after save completion
 
 

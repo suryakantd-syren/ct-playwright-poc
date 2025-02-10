@@ -23,9 +23,8 @@
 
 - Clone this repo
 
-  - `git clone ssh://git@sourcefront.syncsort.com/pem/pem20.git`
-  - navigate to directory `pem-ui/apps/sanity`
-  - install dependencies: `npm install`
+  - `git clone https://github.com/suryakantd-syren/ct-playwright-poc.git`
+  - install dependencies: `yarn install`
   - install playwright browsers : `npx playwright install`
 
 - Execute tests

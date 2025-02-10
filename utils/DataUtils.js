@@ -27,8 +27,8 @@ class DataUtils {
   getLoginCredentials(portal) {
     let jsonData;
     switch (portal) {
-      case "PEM":
-        jsonData = JSON.parse(JSON.stringify(require("../test_data/ph_credentials.json")));
+      case "CC":
+        jsonData = JSON.parse(JSON.stringify(require("../test_data/credentials.json")));
         break;
       default:
         throw new Error(`No credentials found for portal: ${portal}`);
@@ -52,9 +52,9 @@ class DataUtils {
   }
 
 
-  getDataForActivity(entity) {
+  getDataForRCAModel(entity) {
     const jsonData = JSON.parse(
-      JSON.stringify(require("../test_data/pem_est_data.json"))
+      JSON.stringify(require("../test_data/CC_est_data.json"))
     );
     let data = jsonData[entity];    
     return data;

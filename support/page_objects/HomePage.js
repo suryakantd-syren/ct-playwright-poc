@@ -1,4 +1,4 @@
-class PEMHomePage {
+class CCHomePage {
     /**
     * @param {import('@playwright/test').Page} page
     */
@@ -17,4 +17,4 @@ class PEMHomePage {
         this.page.waitForLoadState();
     }
 }
-module.exports = { PEMHomePage };
+module.exports = { CCHomePage };

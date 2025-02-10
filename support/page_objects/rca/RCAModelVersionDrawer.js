@@ -1,10 +1,10 @@
-class ActivityVersionDrawer {
+class RCAModelVersionDrawer {
   constructor(page) {
     this.page = page;
 
     // version View and Edit
-    this.versionView = this.page.locator('ul.cds--overflow-menu-options--open .activity-view-overflow-menu');
-    this.versionEdit = this.page.locator('ul.cds--overflow-menu-options--open .activity-edit-overflow-menu');
+    this.versionView = this.page.locator('ul.cds--overflow-menu-options--open .RCAModel-view-overflow-menu');
+    this.versionEdit = this.page.locator('ul.cds--overflow-menu-options--open .RCAModel-edit-overflow-menu');
 
     // Model
     this.modelHeading = this.page.locator('.is-visible .cds--modal-header__heading');
@@ -21,7 +21,7 @@ class ActivityVersionDrawer {
     await btn.click();
   }
 
-  // Activity Version View From Ellipse
+  // RCA Model Version View From Ellipse
   async activityVersionView() {
     await this.page.waitForTimeout(10);
     const drafRow = await this.activityVersionRow('Draft');
@@ -32,7 +32,7 @@ class ActivityVersionDrawer {
     // After Click on View btn
   }
 
-  // Activity Version Edit From Ellipse
+  // RCA Model Version Edit From Ellipse
   async activityVersionEdit() {
     await this.page.waitForTimeout(10);
     const drafRow = await this.activityVersionRow('Draft');
@@ -43,4 +43,4 @@ class ActivityVersionDrawer {
   }*/
 }
 
-module.exports = { ActivityVersionDrawer };
+module.exports = { RCAModelVersionDrawer };

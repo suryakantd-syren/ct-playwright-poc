@@ -1,5 +1,5 @@
 {
-  "name": "pem-sanity",
+  "name": "cc-sanity",
   "version": "1.0.0",
   "scripts": {
     "runTestsQA": "npx bddgen && npx playwright test",

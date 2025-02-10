@@ -8,7 +8,7 @@ const dataUtils = new DataUtils();
 
 
 Then('Verify {string} page is displayed [Page][{string}]', async function ({context},pageTitle, pageId) {
-  let newPage = await dataUtils.getPage(context, 'PEM');
+  let newPage = await dataUtils.getPage(context, 'CC');
  
   // const textEle = await newPage.locator(`.${pageId}-container .cds--data-table-container .cds--data-table-header .cds--data-table-header__title`);
   // await expect(textEle).toBeVisible();
@@ -18,7 +18,7 @@ Then('Verify {string} page is displayed [Page][{string}]', async function ({cont
 });
 
 When('User clicks on {string} link in [Page][{string}]', async function ({context},text, pageId) {
-  let newPage = await dataUtils.getPage(context, 'PEM');
+  let newPage = await dataUtils.getPage(context, 'CC');
 
   const actionBtn = await newPage.getByText(text);
   await expect(actionBtn).toBeVisible();
@@ -27,14 +27,14 @@ When('User clicks on {string} link in [Page][{string}]', async function ({contex
 
 When('User waits for api call for {int}', { timeout: 20 * 1000 }, async function ({context},waitTime) {
   // Write code here that turns the phrase above into concrete actions
-  let newPage = await dataUtils.getPage(context, 'PEM');
+  let newPage = await dataUtils.getPage(context, 'CC');
 
   await newPage.waitForTimeout(waitTime);
 });
 
 When('User waits for {int} seconds for application to process', { timeout: 20 * 1000 }, async function ({context},waitTime) {
   // Write code here that turns the phrase above into concrete actions
-  let newPage = await dataUtils.getPage(context, 'PEM');
+  let newPage = await dataUtils.getPage(context, 'CC');
 
   await newPage.waitForTimeout(waitTime);
 });

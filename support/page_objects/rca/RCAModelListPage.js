@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 
-class ActivityListPage {
+class RCAModelListPage {
   constructor(page) {
     this.page = page;
     this.dataTable = (tableName) => this.page.locator(`.cds--data-table--${tableName}`);
@@ -18,7 +18,7 @@ class ActivityListPage {
   }
 
   /*
-  // Find Activity Row By Current Status
+  // Find RCA Model Row By Current Status
    async activityRow(status,index,button) {
         await this.page.waitForTimeout(10);
         const row = await this.tableData.locator('tr');
@@ -31,7 +31,7 @@ class ActivityListPage {
         }
     }
 
-  // Find Activity Row By Current Status
+  // Find RCA Model Row By Current Status
   async rowLevelElement(status, index, css) {
     await this.page.waitForTimeout(10);
     const row = await this.tableData.locator('tr');
@@ -44,7 +44,7 @@ class ActivityListPage {
     }
   }
 
-  // Activity RollOut Button Enable
+  // RCA Model RollOut Button Enable
   async rolloutBtnEnable() {
     await this.page.waitForTimeout(10);
     const rollOutButton = await this.rowLevelElement('Final', 4, '.action-item-rollout');
@@ -54,7 +54,7 @@ class ActivityListPage {
     expect(btn).toBeEnabled();
   }
 
-  // Activity RollOut
+  // RCA Model RollOut
   async activityRollout() {
     await this.page.waitForTimeout(10);
     //const finalStatusRow = await this.rowLevelElement("Final",0,".action-item-rollout");
@@ -78,7 +78,7 @@ class ActivityListPage {
     }
 
 
-    // Activity Mark As Final
+    // RCA Model Mark As Final
     async activityMarkAsFinal() {
         await this.page.waitForTimeout(10);
         //const drafStatusRow = await this.activityRow("Draft");
@@ -94,7 +94,7 @@ class ActivityListPage {
 
     
 
-    // Activity Restore
+    // RCA Model Restore
     async restoreAcitivity() {
         await this.page.waitForTimeout(10);
         //const drafStatusRow = 
@@ -104,15 +104,15 @@ class ActivityListPage {
     }
     
 
-    // Back To Main Activity List Page
-    async backToActivityPage(subMenu, menu) {
+    // Back To Main RCA Model List Page
+    async backToRCAModelPage(subMenu, menu) {
         await this.activityMenu.filter({ hasText: menu }).click();
         await this.page.locator('.cds--side-nav__item a .cds--side-nav__link-text').filter({ hasText: subMenu }).click();
         await this.page.locator('[data-testid="side-nav-toggle-button"]').click();
     }
 
-    // Activity View From Ellipse
-    async viewActivity() {
+    // RCA Model View From Ellipse
+    async viewRCAModel() {
         await this.page.waitForTimeout(10);
         const drafRow = await this.activityRow("Draft");
         const btn = await drafRow.locator('td').nth(5).locator('.cds--overflow-menu__wrapper button');
@@ -120,11 +120,11 @@ class ActivityListPage {
         await this.activityViewBtn.click();
         const menuName = await this.currentBreadCrumbItem.innerText();
         await expect(menuName).toContain("Workflow");
-        await this.backToActivityPage("Definitions", "Activities");
+        await this.backToRCAModelPage("Definitions", "Activities");
     }
 
-    // Activity Edit From Ellipse
-    async editActivity() {
+    // RCA Model Edit From Ellipse
+    async editRCAModel() {
         await this.page.waitForTimeout(10);
         const drafRow = await this.activityRow("Draft");
         const btn = await drafRow.locator('td').nth(5).locator('.cds--overflow-menu__wrapper button');
@@ -132,11 +132,11 @@ class ActivityListPage {
         await this.activityEditBtn.click();
         const menuName = await this.currentBreadCrumbItem.innerText();
         await expect(menuName).toContain("Workflow");
-        await this.backToActivityPage("Definitions", "Activities");
+        await this.backToRCAModelPage("Definitions", "Activities");
     }
 
-    // Activity Version Drawer
-    async viewActivityVersions() {
+    // RCA Model Version Drawer
+    async viewRCAModelVersions() {
         await this.page.waitForTimeout(10);
         const finalRow = await this.activityRow("Final");
         const activityName = await finalRow.locator('td').nth(0).locator('.information-text').innerText();
@@ -147,4 +147,4 @@ class ActivityListPage {
     }*/
 }
 
-module.exports = { ActivityListPage };
+module.exports = { RCAModelListPage };

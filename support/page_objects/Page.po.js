@@ -1,7 +1,12 @@
 const { expect } = require('@playwright/test');
-const { DataTable } = require('./ActivityDataTable');
+const { DataTable } = require('./RCAModelDataTable');
 
 class Page {
+  
+   /**
+    * @param {import('@playwright/test').Page} parent
+    *  @param {string} pageName
+    */
   constructor(parent, pageName) {
     this.pageName = pageName;
     this.parent = parent;
@@ -15,11 +20,18 @@ class Page {
     }
   }
 
+  /**
+    * @param {string} pageTitle
+    */
   async verfiyPageTitle(pageTitle) {
     const text = await this._getPage.locator(`.page-header-container .cds--data-table-header__title`).textContent();
     expect(text).toBe(pageTitle);
   }
 
+    /**
+    * @param {string} actionName
+    * @param {string} elementStatus
+    */
   async verifyPageAction(actionName, elementStatus) {
     const pageFooter = await this._getPage().locator(`.sfg--page--actions`);
     expect(pageFooter).toBeVisible();
@@ -27,6 +39,9 @@ class Page {
     //checkElementStatus(actionBtn, elementStatus);
   }
 
+   /**
+    * @param {string} actionName
+    */
   async performPageAction(actionName) {
     const pageFooter = await this._getPage().locator(`.sfg--page--actions`);
     expect(pageFooter).toBeVisible();
@@ -40,6 +55,9 @@ class Page {
   //   return new Form(this.parent, await this._getPage(), formName);
   // }
 
+   /**
+    * @param {string} datatableName
+    */
   async getDataTable(datatableName) {
     return new DataTable(this.parent, await this._getPage(), datatableName);
   }

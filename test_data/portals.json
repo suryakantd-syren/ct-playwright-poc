@@ -1,11 +1,6 @@
 {
-    "PEM": {
-      "url": "http://localhost:3005/pem#/",
-      "title": "IBM Partner Engagement Manager"
-    },
     "CC": {
       "url": "https://command-center-ui.azurewebsites.net/",
       "title": "React App"
     }
-
 }

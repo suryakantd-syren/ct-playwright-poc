@@ -10,6 +10,10 @@ class LoginPage {
         this.welcomeText = page.locator('span#m_WelcomeMessage')
     }
 
+     /**
+    * @param {string} userName
+    * @param {string} password
+    */
     async loginApplication(userName, password) {
         await this.userNameTextBox.fill(userName);
         await this.passwordTextBox.fill(password);

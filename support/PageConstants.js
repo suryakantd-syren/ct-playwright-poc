@@ -1,22 +1,22 @@
 const { BasePage } = require("./page_objects/BasePage");
 const { LoginPage } = require("./page_objects/LoginPage");
-const { ActivityListPage } = require("./page_objects/activity/ActivityListPage");
-const { ActivityDefinitionPage } = require("./page_objects/activity/ActivityDefinitionPage");
-const { ActivityVersionDrawer } = require("./page_objects/activity/ActivityVersionDrawer");
-const { RolloutWizard } = require("./page_objects/activity/RolloutWizard");
-const { PEMHomePage } = require("./page_objects/HomePage");
-const { ActivityDataTable } = require("./page_objects/activity/ActivityDataTable");
+const { RCAModelListPage } = require("./page_objects/rca/RCAModelListPage");
+const { RCAModelDefinitionPage } = require("./page_objects/rca/RCAModelDefinitionPage");
+const { RCAModelVersionDrawer } = require("./page_objects/rca/RCAModelVersionDrawer");
+const { RolloutWizard } = require("./page_objects/rca/RolloutWizard");
+const { CCHomePage } = require("./page_objects/HomePage");
+const { RCAModelDataTable } = require("./page_objects/rca/RCAModelDataTable");
 
 class PageConstants {
     constructor(page) {
         this.basePage = new BasePage(page);
-        this.pemLoginPage = new LoginPage(page);
-        this.pemHomePage = new PEMHomePage(page);
-        this.activityListPage = new ActivityListPage(page);
-        this.activityVersionDrawer = new ActivityVersionDrawer(page);
-        this.activityDefinitionPage = new ActivityDefinitionPage(page);
+        this.CCLoginPage = new LoginPage(page);
+        this.CCHomePage = new CCHomePage(page);
+        this.activityListPage = new RCAModelListPage(page);
+        this.activityVersionDrawer = new RCAModelVersionDrawer(page);
+        this.activityDefinitionPage = new RCAModelDefinitionPage(page);
         this.rolloutWizard = new RolloutWizard(page);
-        this.activityDataTable = new ActivityDataTable(page);
+        this.activityDataTable = new RCAModelDataTable(page);
  }
 }
 

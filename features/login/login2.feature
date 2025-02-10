@@ -1,6 +1,6 @@
-Feature: PEM2.0 Login Flow
+Feature: CC2.0 Login Flow
 
   @playwright
-  Scenario: Validate PM Login2
+  Scenario: Validate CC Login2
      Given I'm logged into the CC App
      Then I should see the CC App

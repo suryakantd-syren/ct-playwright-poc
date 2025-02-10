@@ -10,6 +10,9 @@ class BasePage {
         this.header = (title) => page.getByTitle(title);
     }
 
+     /**
+    * @param {string} title
+    */
     async verifyPageHeadingAndGoNext(title){
         this.page.waitForTimeout(1000);
         expect(this.header(title)).toBeVisible();
