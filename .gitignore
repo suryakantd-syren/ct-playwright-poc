@@ -1,0 +1,11 @@
+node_modules/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+package-lock.json
+/junit-reports/
+.features-gen/features/*
+.features-gen/*
+allure-results
+/allure-report/
+/allure-results
