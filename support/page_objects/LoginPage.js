@@ -13,7 +13,7 @@ class LoginPage {
      /**
     * @param {string} userName
     * @param {string} password
-    */
+    */ 
     async loginApplication(userName, password) {
         await this.userNameTextBox.fill(userName);
         await this.passwordTextBox.fill(password);
